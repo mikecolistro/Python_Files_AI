@@ -1,0 +1,5 @@
+@sms.rogers.com
+@txt.bell.ca
+@msg.telus.com
+@vmobile.ca
+@sms.fido.ca

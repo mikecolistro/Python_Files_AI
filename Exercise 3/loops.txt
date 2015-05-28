@@ -1,0 +1,49 @@
+
+def checkWin2(b , p):
+    row = 0
+    col = 0
+    o = otherPlayer(p)
+    #check row
+    for row in range(2):
+        for col in range(2):
+            if col == 0:
+                checkValue1 = 1
+                checkValue2 = 2
+            if col == 1:
+                checkValue1 = 0
+                checkValue2 = 2
+            if col == 2:
+                checkValue1 = 0
+                checkValue2 = 1
+            if b[row][checkValue1] == p and b[row][checkValue2] == p and b[row][col] != o:
+                return [row, col]
+    #check col
+    row = 0
+    col = 0
+    for col in range(2):
+        for row in range(2):
+            if row == 0:
+                checkValue1 = 1
+                checkValue2 = 2
+            if row == 1:
+                checkValue1 = 0
+                checkValue2 = 2
+            if row == 2:
+                checkValue1 = 0
+                checkValue2 = 1
+            if b[checkValue1][col] == p and b[checkValue2][col] == p and b[row][col] != o:
+                return [row, col]
+    diag = 0
+    for diag in range(2):
+        if diag == 0:
+            checkValue1 = 1
+            checkValue2 = 2
+        if row == 1:
+            checkValue1 = 0
+            checkValue2 = 2
+        if row == 2:
+            checkValue1 = 0
+            checkValue2 = 1
+        if b[checkValue1][checkValue1] == p and b[checkValue2][checkValue2] == p and b[diag][diag] != o:
+            return [diag, diag]
+    return None
